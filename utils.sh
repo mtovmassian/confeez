@@ -14,5 +14,5 @@ mkdir_and_cd() {
 
 alias cl="clear"
 alias colors="print_colors"
-alias mkdir:cd="mkdir_and_cd"
+alias mkdircd="mkdir_and_cd"
 alias copy="xclip -selection clipboard"

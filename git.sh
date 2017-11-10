@@ -14,18 +14,38 @@ git_push() {
   git push origin "${current_branch}"
 }
 
+
+git_flow_finish_branch() {
+  current_branch="$(get_current_branch)"
+  branch_type="$(echo ${current_branch} | grep -oE '\w+/' | grep -oE '\w+')"
+  branch_name="$(echo ${current_branch} | grep -oE '/\w+$' | grep -oE '\w+')"
+  git flow "${branch_type}" finish "${branch_name}"
+}
+
 alias git:log="git log --graph"
 
 alias git:ck="git checkout"
 
-alias git:b="git branch"
+alias git:ckbr="git checkout -b"
 
-alias git:b:new="git checkout -b"
+alias git:br="git branch"
 
-alias git:b:del="git branch -d"
+alias git:br:del="git branch -d"
 
-alias git:cm="git commit -am"
+alias git:com="git commit -am"
+
+alias git:st="git status"
 
 alias git:push="git_push"
 
 alias git:pull="git_pull"
+
+alias gitf="git flow"
+
+alias gitf:f="git flow feature start"
+
+alias gitf:r="git flow release start"
+
+alias gitf:finish="git_flow_finish_branch"
+
+
