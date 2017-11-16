@@ -5,11 +5,23 @@ docker_ps_filter_ancestor() {
   docker ps -a -q --filter "ancestor=${ancestor}"
 }
 
+docker_rm_images() {
+  images="$@"
+  for image in $images
+  do
+    docker image rm --force "${image}"
+  done
+}
+
 alias dk="docker"
 
 alias dk:cnt="docker container"
 
 alias dk:img="docker image"
+
+alias dk:img:ls="docker image ls"
+
+alias dk:img:rm="docker_rm_images"
 
 alias dk:ser="docker service"
 

@@ -14,6 +14,18 @@ git_push() {
   git push origin "${current_branch}"
 }
 
+git_clone_and_cd() {
+  clone_link="$1"
+  if [ "$#" -gt 1 ]
+  then
+    directory_name="$2"
+  else
+    directory_name="$(echo ${clone_link} | grep -oE '[a-zA-Z0-9\-\_]*\.git' | grep -oE '.*[^.git]')"
+  fi
+  git clone "${clone_link}" "${directory_name}"
+  cd "${directory_name}"
+}
+
 
 git_flow_finish_branch() {
   current_branch="$(get_current_branch)"
@@ -39,6 +51,8 @@ alias git:st="git status"
 alias git:push="git_push"
 
 alias git:pull="git_pull"
+
+alias git:clone="git_clone_and_cd"
 
 alias gitf="git flow"
 
