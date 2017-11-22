@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-print_command() {
-  command="$1"
-  local DEFAULT=$(tput sgr0)
-  local WHITE=$(tput setaf 255)
-  echo $WHITE"${command}"$DEFAULT
-}
-
 get_current_branch() {
   echo $(git branch | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
 }
