@@ -8,7 +8,7 @@ print_colors() {
 }
 
 reload_bash() {
-  echo source ~/.bashrc
+  print_command "source ~/.bashrc"
   source ~/.bashrc
 }
 
@@ -22,8 +22,8 @@ alias reloadsh="reload_bash"
 
 alias watch="htop"
 
-alias down="sudo shutdown now"
+alias down="print_command 'sudo shutdown now' && sudo shutdown now"
 
 alias lock="gnome-screensaver-command --lock"
 
-alias exportpy="export PYTHONPATH=$PYTHONPATH:$(pwd)"
+alias exportpy="print_command 'export PYTHONPATH=$PYTHONPATH:$(pwd)' && export PYTHONPATH=$PYTHONPATH:$(pwd)"
