@@ -9,6 +9,7 @@ print_colors() {
 
 mkdir_and_cd() {
   dirname="$1"
+  echo mkdir "${dirname}" "&&" cd "${dirname}"
   mkdir "${dirname}" && cd "${dirname}"
 }
 
@@ -25,6 +26,7 @@ create_and_edit_executable_file() {
 }
 
 reload_bash() {
+  echo source ~/.bashrc
   source ~/.bashrc
 }
 
@@ -40,10 +42,14 @@ alias vimx="create_and_edit_executable_file"
 
 alias copy="xclip -selection clipboard"
 
+alias rmall="echo sudo rm -r && sudo rm -r"
+
 alias watch="htop"
 
 alias down="sudo shutdown now"
 
 alias lock="gnome-screensaver-command --lock"
+
+alias exportpy="export PYTHONPATH=$PYTHONPATH:$(pwd)"
 
 alias reloadsh="reload_bash"

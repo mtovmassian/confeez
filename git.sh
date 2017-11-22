@@ -1,52 +1,89 @@
 #!/usr/bin/env bash
 
+print_command() {
+  command="$1"
+  local DEFAULT=$(tput sgr0)
+  local WHITE=$(tput setaf 255)
+  echo $WHITE"${command}"$DEFAULT
+}
+
 get_current_branch() {
   echo $(git branch | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
 }
 
+git_checkout() {
+  local branch=""
+  if [ "$1" = "-b" ]
+  then
+    branch="$2"
+    print_command "git checkout -b ${branch}"
+    git checkout -b "${branch}"
+  else
+    local branch="$1"
+    print_command "git checkout ${branch}"
+    git checkout "${branch}"
+  fi
+}
+
+git_commit() {
+  local commit_message="$1"
+  print_command "git commit -am \"${commit_message}\""
+  git commit -am "${commit_message}"
+}
+
 git_pull() {
-  current_branch="$(get_current_branch)"
+  local current_branch="$(get_current_branch)"
+  print_command "git pull origin ${current_branch}"
   git pull origin "${current_branch}"
 }
 
 git_push() {
-  current_branch="$(get_current_branch)"
+  local current_branch="$(get_current_branch)"
+  print_command "git push origin ${current_branch}"
   git push origin "${current_branch}"
 }
 
 git_clone_and_cd() {
-  clone_link="$1"
+  local clone_link="$1"
   if [ "$#" -gt 1 ]
   then
     directory_name="$2"
   else
-    directory_name="$(echo ${clone_link} | grep -oE '[a-zA-Z0-9\-\_]*\.git' | grep -oE '.*[^.git]')"
+    directory_name="$(echo ${clone_link} | grep -oE '[a-zA-Z0-9\_\-]*\.git' | grep -oE '.*[^.git]')"
   fi
-  git clone "${clone_link}" "${directory_name}"
-  cd "${directory_name}"
+  print_command "git clone ${clone_link} ${directory_name} && cd ${directory_name}"
+  git clone "${clone_link}" "${directory_name}" && cd "${directory_name}"
 }
 
+git_flow_start_branch() {
+  local branch_name="$2"
+  local branch_type=""
+  if [ "$1" = "feature" ]
+  then
+    branch_type="feature"
+  elif [ "$1" = "release" ]
+  then
+    branch_type="release"
+  fi
+  print_command "git flow ${branch_type} start ${branch_name}"
+  git flow "${branch_type}" start "${branch_name}"
+}
 
 git_flow_finish_branch() {
-  current_branch="$(get_current_branch)"
-  branch_type="$(echo ${current_branch} | grep -oE '\w+/' | grep -oE '\w+')"
-  branch_name="$(echo ${current_branch} | grep -oE '/\w+$' | grep -oE '\w+')"
+  local current_branch="$(get_current_branch)"
+  local branch_type="$(echo ${current_branch} | grep -oE '\w+/' | grep -oE '\w+')"
+  local branch_name="$(echo ${current_branch} | grep -oE '/\w+$' | grep -oE '\w+')"
+  print_command "git flow ${branch_type} finish ${branch_name}"
   git flow "${branch_type}" finish "${branch_name}"
 }
 
-alias git:log="git log --graph"
+alias git:log="print_command 'git log --graph' && git log --graph"
 
-alias git:ck="git checkout"
+alias git:ck="git_checkout"
 
-alias git:ckbr="git checkout -b"
+alias git:b="git_branch"
 
-alias git:br="git branch"
-
-alias git:br:del="git branch -d"
-
-alias git:com="git commit -am"
-
-alias git:st="git status"
+alias git:com="git_commit"
 
 alias git:push="git_push"
 
@@ -56,10 +93,9 @@ alias git:clone="git_clone_and_cd"
 
 alias gitf="git flow"
 
-alias gitf:f="git flow feature start"
+alias gitf:f="git_flow_start_branch feature"
 
-alias gitf:r="git flow release start"
+alias gitf:r="git flow start_branch release"
 
 alias gitf:finish="git_flow_finish_branch"
-
 

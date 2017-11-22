@@ -28,7 +28,7 @@ create_lambda_function() {
   echo -n "memory-size: "
   read memory_size
 
-  aws lambda create-function --region "${region}" --function-name "${function_name}" --zip-file "${zip_file}" --role "${role}" \
+  aws lambda create-function --region "${region}" --function-name "${function_name}" --zip-file fileb://"${zip_file}" --role "${role}" \
     --handler "${handler}" --runtime "${runtime}" --profile "${profile}" --timeout "${timeout}" --memory-size "${memory_size}"
 
 }
