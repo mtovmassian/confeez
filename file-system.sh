@@ -13,9 +13,30 @@ create_and_edit_executable_file() {
   vim "${filename}"
 }
 
+go_up() {
+  directories_number=$1
+  if [ ! -z $directories_number ] && [ $directories_number -gt 1 ];
+  then
+    path=".."
+    for i in $(eval echo {2..${directories_number}}); do
+      path+="/.."
+      echo $path
+    done
+    cd "${path}"
+  else
+    cd ..
+  fi
+}
+
+alias ..="go_up"
+
 alias home="cd ${HOME}"
 
 alias dev="cd ${HOME}/dev"
+
+alias dl="cd ${HOME}/downloads"
+
+alias opt="cd /opt/"
 
 alias mkdircd="mkdir_and_cd"
 

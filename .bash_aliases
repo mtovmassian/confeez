@@ -7,6 +7,9 @@ print_command() {
   echo $GREY_COLOR"${command}"$DEFAULT_COLOR
 }
 
+# System
+source "${SCRIPTS_DIR}"/system.sh
+
 # File system
 source "${SCRIPTS_DIR}"/file-system.sh
 
@@ -33,3 +36,6 @@ source "${SCRIPTS_DIR}"/bctp.sh
 
 # Project SIE
 source "${SCRIPTS_DIR}"/sie.sh
+
+# Project Labels240
+source "${SCRIPTS_DIR}"/labels240.sh
