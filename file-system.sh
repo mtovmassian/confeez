@@ -6,6 +6,12 @@ mkdir_and_cd() {
   mkdir "${dirname}" && cd "${dirname}"
 }
 
+mkdir_and_touch() {
+  path="$1"
+  mkdir -p "$(dirname "${path}")"
+  touch "${path}"
+}
+
 create_and_edit_executable_file() {
   filename="$1"
   echo "#!/usr/bin/env bash" > "${filename}"
@@ -40,6 +46,10 @@ alias opt="cd /opt/"
 
 alias mkdircd="mkdir_and_cd"
 
+alias mkdirtouch="mkdir_and_touch"
+
 alias vimx="create_and_edit_executable_file"
 
-alias rmall="print_command 'sudo rm -r' && sudo rm -r"
+alias rmr="rm -r"
+
+alias dush="du --summarize --human-readable"

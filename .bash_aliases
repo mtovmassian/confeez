@@ -1,3 +1,5 @@
+#!/usr/bin/env bash 
+
 SCRIPTS_DIR="${HOME}/.scripts"
 
 print_command() {
