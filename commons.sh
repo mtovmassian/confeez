@@ -18,7 +18,4 @@ alias colors="print_colors"
 
 alias copy="xclip -selection clipboard"
 
-alias rsh="reload_bash"
-
-alias exportpy="print_command 'export PYTHONPATH=$PYTHONPATH:$(pwd)' && export PYTHONPATH=$PYTHONPATH:$(pwd)"
-
+alias shrc="reload_bash"

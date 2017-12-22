@@ -19,26 +19,50 @@ create_and_edit_executable_file() {
   vim "${filename}"
 }
 
-go_up() {
+cd_up() {
   directories_number=$1
   if [ ! -z $directories_number ] && [ $directories_number -gt 1 ];
   then
     path=".."
     for i in $(eval echo {2..${directories_number}}); do
       path+="/.."
-      echo $path
     done
+    print_command "cd ${path}"
     cd "${path}"
   else
     cd ..
   fi
 }
 
-alias ..="go_up"
+pwd_up() {
+  directories_number=$1
+  if [ ! -z $directories_number ] && [ $directories_number -gt 1 ];
+  then
+    path=".."
+    for i in $(eval echo {2..${directories_number}}); do
+      path+="/.."
+    done
+    echo $(cd "${path}" && pwd)
+  else
+    echo $(cd .. && pwd)
+  fi
+}
+
+export_python_path() {
+  local working_dir="$1"
+  print_command "export PYTHONPATH=$PYTHONPATH:${working_dir}"
+  export PYTHONPATH=$PYTHONPATH:${working_dir}
+}
+
+alias ..="cd_up"
+
+alias pwd..="pwd_up"
 
 alias home="cd ${HOME}"
 
 alias dev="cd ${HOME}/dev"
+
+alias data="cd ${HOME}/data"
 
 alias dl="cd ${HOME}/downloads"
 
@@ -53,3 +77,7 @@ alias vimx="create_and_edit_executable_file"
 alias rmr="rm -r"
 
 alias dush="du --summarize --human-readable"
+
+alias encoding="file -i"
+
+alias xp:py="export_python_path"
