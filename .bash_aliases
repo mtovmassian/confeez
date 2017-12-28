@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 
-SCRIPTS_DIR="${HOME}/.scripts"
+LIB_DIR="${HOME}/.scripts/lib"
 
 print_command() {
   command="$1"
@@ -10,34 +10,34 @@ print_command() {
 }
 
 # System
-source "${SCRIPTS_DIR}"/system.sh
+source "${LIB_DIR}"/system.sh
 
 # File system
-source "${SCRIPTS_DIR}"/file-system.sh
+source "${LIB_DIR}"/file-system.sh
 
 # GREP
-source "${SCRIPTS_DIR}"/grep.sh
+source "${LIB_DIR}"/grep.sh
 
 # Remote machines
-source "${SCRIPTS_DIR}"/remote.sh
+source "${LIB_DIR}"/remote.sh
 
 # Commons
-source "${SCRIPTS_DIR}"/commons.sh
+source "${LIB_DIR}"/commons.sh
 
 # Git commands
-source "${SCRIPTS_DIR}"/git.sh
+source "${LIB_DIR}"/git.sh
 
 # Docker commands
-source "${SCRIPTS_DIR}"/docker.sh
+source "${LIB_DIR}"/docker.sh
 
 # AWS commands
-source "${SCRIPTS_DIR}"/aws.sh
+source "${LIB_DIR}"/aws.sh
 
 # Project BCTP
-source "${SCRIPTS_DIR}"/bctp.sh
+source "${LIB_DIR}"/bctp.sh
 
 # Project SIE
-source "${SCRIPTS_DIR}"/sie.sh
+source "${LIB_DIR}"/sie.sh
 
 # Project Labels240
-source "${SCRIPTS_DIR}"/labels240.sh
+source "${LIB_DIR}"/labels240.sh
