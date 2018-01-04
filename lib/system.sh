@@ -19,3 +19,5 @@ alias sctl:rs="print_command 'sudo systemctl restart' && sudo systemctl restart"
 alias lock="gnome-screensaver-command --lock" 
 
 alias down="print_command 'sudo shutdown now' && sudo shutdown now"
+
+alias update="print_command 'sudo apt-get update && sudo apt-get upgrade -y' && sudo apt-get update && sudo apt-get upgrade -y"

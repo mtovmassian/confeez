@@ -80,4 +80,4 @@ alias dush="du --summarize --human-readable"
 
 alias encoding="file -i"
 
-alias xp:py="export_python_path"
+alias export:py="export_python_path"
