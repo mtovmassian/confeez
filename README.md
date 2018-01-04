@@ -1,1 +1,1 @@
-Bash scripts and aliases.
+Bash scripts and aliases to make Linux system administration easier."
