@@ -10,7 +10,7 @@ ssh_neptune_labels240() {
   ssh hardis@description.neptune.fr
 }
 
-readonly AWS_HARDIS_KEYS_DIR="${HOME}/.ssh/aws/hardis"
+AWS_HARDIS_KEYS_DIR="${HOME}/.ssh/aws/hardis"
 
 alias ssh:hardis:smartdata="ssh usercds@192.168.32.187"
 

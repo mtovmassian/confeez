@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-readonly bctp_home_dir="~/dev/bctp"
+bctp_home_dir="~/dev/bctp"
 
 alias bctp="cd ${bctp_home_dir}"
 

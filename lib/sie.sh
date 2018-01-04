@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-readonly sie_home_dir="~/dev/sie"
+sie_home_dir="~/dev/sie"
 
 alias sie="cd ${sie_home_dir}"
 

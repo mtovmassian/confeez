@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-readonly labels240_home_dir="~/dev/labels-240"
+labels240_home_dir="~/dev/labels-240"
 
 alias labels240="cd ${labels240_home_dir}"
 

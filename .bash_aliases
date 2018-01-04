@@ -18,6 +18,9 @@ source "${LIB_DIR}"/file-system.sh
 # GREP
 source "${LIB_DIR}"/grep.sh
 
+# Help
+source "${LIB_DIR}"/help.sh
+
 # Remote machines
 source "${LIB_DIR}"/remote.sh
 
