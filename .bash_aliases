@@ -43,4 +43,7 @@ source "${LIB_DIR}"/bctp.sh
 source "${LIB_DIR}"/sie.sh
 
 # Project Labels240
-source "${LIB_DIR}"/labels240.sh
+source "${LIB_DIR}"/labels240.sh*
+
+# Project SmartEchange
+source "${LIB_DIR}"/smart-exchange.sh
