@@ -47,3 +47,6 @@ source "${LIB_DIR}"/labels240.sh*
 
 # Project SmartEchange
 source "${LIB_DIR}"/smart-exchange.sh
+
+# Project ODIACC
+source "${LIB_DIR}"/odiacc.sh

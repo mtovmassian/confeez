@@ -8,9 +8,9 @@ clear_web_session() {
 
 }
 
-alias work="htop"
+alias proc="htop"
 
-alias gwork="gnome-system-monitor"
+alias gproc="gnome-system-monitor"
 
 alias arch="print_command 'lscpu' && lscpu"
 
