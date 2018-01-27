@@ -12,6 +12,11 @@ reload_bash() {
   source ~/.bashrc
 }
 
+weather() {
+  city="${1}"
+  curl -X GET http://wttr.in/"${city}"
+}
+
 alias cl="clear"
 
 alias colors="print_colors"
@@ -19,3 +24,5 @@ alias colors="print_colors"
 alias copy="xclip -selection clipboard"
 
 alias shrc="reload_bash"
+
+alias weather="weather"

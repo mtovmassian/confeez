@@ -22,11 +22,11 @@ start_api() {
   java -jar ${SE_ROOT_DIR}SmartExchangeRESTAPI/target/smartExchangeRestApi.war
 }
 
-alias se:ms:file="start_ms_file_gen"
+alias se:file="start_ms_file_gen"
 
-alias se:ms:zip="start_ms_map_zip_gen"
+alias se:zip="start_ms_map_zip_gen"
 
-alias se:ms:sim="start_ms_sim_calc"
+alias se:sim="start_ms_sim_calc"
 
 alias se:api="start_api"
 

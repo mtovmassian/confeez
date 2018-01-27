@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 
-LIB_DIR="${HOME}/.scripts/lib"
+LIB_DIR="${HOME}/config/lib"
 
 print_command() {
   command="$1"
