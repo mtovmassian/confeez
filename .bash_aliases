@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 
-LIB_DIR="${HOME}/config-easy/lib"
+LIB_DIR="${HOME}/confeez/lib"
 
 print_command() {
   command="$1"

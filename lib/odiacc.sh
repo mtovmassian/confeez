@@ -10,8 +10,8 @@ b64_encode_basic_auth() {
 
 alias odiacc="cd ${odiacc_home_dir}"
 
-alias odiacc:web="cd ${odiacc_home_dir}/odiacc_web"
+alias odiacc:web="cd ${odiacc_home_dir}/odiaccweb"
 
-alias odiacc:server="cd ${odiacc_home_dir}/odiacc_server"
+alias odiacc:srv="cd ${odiacc_home_dir}/odiaccsrv"
 
 alias b64auth="b64_encode_basic_auth"

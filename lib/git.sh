@@ -50,14 +50,7 @@ git_clone_and_cd() {
 
 git_flow_start_branch() {
   local branch_name="$2"
-  local branch_type=""
-  if [ "$1" = "feature" ]
-  then
-    branch_type="feature"
-  elif [ "$1" = "release" ]
-  then
-    branch_type="release"
-  fi
+  local branch_type="$1"
   print_command "git flow ${branch_type} start ${branch_name}"
   git flow "${branch_type}" start "${branch_name}"
 }
@@ -65,30 +58,33 @@ git_flow_start_branch() {
 git_flow_finish_branch() {
   local current_branch="$(get_current_branch)"
   local branch_type="$(echo ${current_branch} | grep -oE '\w+/' | grep -oE '\w+')"
-  local branch_name="$(echo ${current_branch} | grep -oE '/\w+$' | grep -oE '\w+')"
-  print_command "git flow ${branch_type} finish ${branch_name}"
+  print_command "git flow ${branch_type} finish ${current_branch}"
   git flow "${branch_type}" finish "${branch_name}"
 }
 
-alias git:log="print_command 'git log --graph' && git log --graph"
+alias gits="print_command 'git status' && git status"
 
-alias git:ck="git_checkout"
+alias gitl="print_command 'git log --graph' && git log --graph"
 
-alias git:b="git_branch"
+alias gitck="git_checkout"
 
-alias git:com="git_commit"
+alias gitbr="git branch"
 
-alias git:push="git_push"
+alias gitcom="git_commit"
 
-alias git:pull="git_pull"
+alias gitP="git_push"
 
-alias git:clone="git_clone_and_cd"
+alias gitp="git_pull"
+
+alias gitc="git_clone_and_cd"
 
 alias gitf="git flow"
 
-alias gitf:f="git_flow_start_branch feature"
+alias gitffeat="git_flow_start_branch feature"
 
-alias gitf:r="git flow start_branch release"
+alias gitfreal="git_flow_start_branch release"
 
-alias gitf:finish="git_flow_finish_branch"
+alias gitfhot="git_flow_start_branch hotfix"
+
+alias gitfF="git_flow_finish_branch"
 

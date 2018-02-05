@@ -4,7 +4,7 @@ sie_home_dir="~/dev/sie"
 
 alias sie="cd ${sie_home_dir}"
 
-alias sie:server="cd ${sie_home_dir}/sie-server"
+alias sie:srv="cd ${sie_home_dir}/sie-server"
 
 alias sie:web="cd ${sie_home_dir}/sie-web"
 
