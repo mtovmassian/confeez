@@ -1,2 +1,3 @@
-Configure at ease.
-Bash scripts and aliases to make Linux system administration easier.
+# Configure at ease
+
+Configuration files, scripts and aliases to make Linux system administration easier.
