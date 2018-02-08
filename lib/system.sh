@@ -24,6 +24,6 @@ alias lock="gnome-screensaver-command --lock"
 
 alias down="print_command 'sudo shutdown now' && sudo shutdown now"
 
-alias reboot="print_command 'sudo shutdown now' && sudo shutdown now"
+alias reboot="print_command 'sudo reboot' && sudo reboot"
 
 alias update="print_command 'sudo apt-get update && sudo apt-get upgrade -y' && sudo apt-get update && sudo apt-get upgrade -y"

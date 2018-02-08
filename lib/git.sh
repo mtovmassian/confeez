@@ -68,15 +68,17 @@ alias gitl="print_command 'git log --graph' && git log --graph"
 
 alias gitck="git_checkout"
 
-alias gitbr="git branch"
+alias gitb="git branch"
 
-alias gitcom="git_commit"
+alias gitd="git diff"
 
-alias gitP="git_push"
+alias gitc="git_commit"
 
-alias gitp="git_pull"
+alias gitp="git_push"
 
-alias gitc="git_clone_and_cd"
+alias gitpl="git_pull"
+
+alias gitcl="git_clone_and_cd"
 
 alias gitf="git flow"
 
@@ -86,5 +88,5 @@ alias gitfreal="git_flow_start_branch release"
 
 alias gitfhot="git_flow_start_branch hotfix"
 
-alias gitfF="git_flow_finish_branch"
+alias gitffin="git_flow_finish_branch"
 
