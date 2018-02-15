@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# LINUX RIGHTS ---------------------------------------------------------------------------------------------------------------------------
 help_linux_rights() {
   echo ""
   echo "r(read):    4 100"
@@ -8,12 +9,18 @@ help_linux_rights() {
   echo ""
 }
 
+alias h:rights="help_linux_rights"
+
+# DATE -----------------------------------------------------------------------------------------------------------------------------------
 help_date() {
   echo ""
   echo "date \"+%Y-%m-%d %H:%M:%S\""
   echo ""
 }
 
+alias h:date="help_date"
+
+# TAR ------------------------------------------------------------------------------------------------------------------------------------
 help_tar() {
   echo ""
   echo "c: create archive"
@@ -30,6 +37,9 @@ help_tar() {
   echo ""
 }
 
+alias h:tar="help_tar"
+
+# MYSQL ----------------------------------------------------------------------------------------------------------------------------------
 help_mysql() {
   echo ""
   echo "CREATE DATABASE:"
@@ -52,6 +62,9 @@ help_mysql() {
   echo ""
 }
 
+alias h:mysql="help_mysql"
+
+# MONGODB --------------------------------------------------------------------------------------------------------------------------------
 help_mongodb() {
   echo ""
   echo "DUMP DATABASE:"
@@ -65,6 +78,9 @@ help_mongodb() {
   echo ""
 }
 
+alias h:mongodb="help_mongodb"
+
+# SCP ------------------------------------------------------------------------------------------------------------------------------------
 help_scp() {
   echo ""
   echo "FROM LOCAL TO REMOTE"
@@ -75,6 +91,9 @@ help_scp() {
   echo ""
 }
 
+alias h:scp="help_scp"
+
+# VIM ------------------------------------------------------------------------------------------------------------------------------------
 help_vim() {
   echo ""
   echo "EXECUTE COMMAND AROUND TAG"
@@ -103,6 +122,9 @@ help_vim() {
   echo ""
 }
 
+alias h:vim="help_vim"
+
+# IPTABLES -------------------------------------------------------------------------------------------------------------------------------
 help_iptables() {
   echo ""
   echo "ACCEPT ONLY ACCESS FROM LOCALHOST"
@@ -117,18 +139,26 @@ help_iptables() {
   echo ""
 }
 
-alias help:rights="help_linux_rights"
+alias h:iptables="help_iptables"
 
-alias help:date="help_date"
+# UFW ------------------------------------------------------------------------------------------------------------------------------------
+help_ufw() {
+  echo ""
+  echo "DISPLAY RULES"
+  echo "sudo ufw status verbose"
+  echo ""
+  echo "DISPLAY NUMBERED RULES"
+  echo "sudo ufw status numbered"
+  echo ""
+  echo "ACCEPT/REFUSE ACCESS RULE FOR ANYONE"
+  echo "sudo ufw [allow / deny] proto <protocole (ex: tcp)> to any port <port>"
+  echo ""
+  echo "ACCEPT/REFUSE ACCESS RULE FOR SPECIFIC IP"
+  echo "sudo ufw [allow / deny] proto <protocole (ex: tcp)> from <ip> to any port <port>"
+  echo ""
+  echo "DELETE ACCESS RULE"
+  echo "sudo ufw delete <number>"
+  echo ""
+}
 
-alias help:tar="help_tar"
-
-alias help:mysql="help_mysql"
-
-alias help:mongodb="help_mongodb"
-
-alias help:scp="help_scp"
-
-alias help:vim="help_vim"
-
-alias help:iptables="help_iptables"
+alias h:ufw="help_ufw"
