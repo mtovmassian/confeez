@@ -12,9 +12,11 @@ ssh_neptune_labels240() {
 
 AWS_HARDIS_KEYS_DIR="${HOME}/.safe/aws/hardis"
 
-alias ssh:smartdata="ssh usercds@192.168.32.187"
+alias ssh:sd="ssh usercds@192.168.32.187"
 
-alias ssh:smartex="ssh usersmartexchange@192.168.38.154"
+alias ssh:se1="ssh usersmartexchange@192.168.38.154"
+
+alias ssh:se2="ssh usersmartexchange@192.168.238.198"
 
 alias ssh:labels240="ssh_neptune_labels240"
 
