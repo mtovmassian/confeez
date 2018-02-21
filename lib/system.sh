@@ -8,17 +8,33 @@ clear_web_session() {
 
 }
 
+update_firewall() {
+  access_rule="${1}"
+  port="${2}"
+  ufw_command="sudo ufw ${access_rule} proto tcp to any port ${port}"
+  print_command "${ufw_command}"
+  eval "${ufw_command}"
+}
+
 alias proc="htop"
 
 alias gproc="gnome-system-monitor"
 
 alias arch="print_command 'lscpu' && lscpu"
 
-alias sctl="systemctl"                                                                                                                                                  
+alias mem="print_command 'free -ht' && free -ht"
 
-alias sctl:s="print_command 'sudo systemctl start' && sudo systemctl start"
+alias sctl="systemctl"
 
-alias sctl:rs="print_command 'sudo systemctl restart' && sudo systemctl restart"
+alias dfh="df -h"
+
+alias dush="du -sh"
+
+alias fw:status="print_command 'sudo ufw status numbered' && sudo ufw status numbered"
+
+alias fw:open="update_firewall allow"
+
+alias fw:close="update_firewall deny"
 
 alias lock="gnome-screensaver-command --lock" 
 
