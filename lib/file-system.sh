@@ -13,10 +13,25 @@ mkdir_and_touch() {
 }
 
 create_and_edit_executable_file() {
+  
+  run() {
+    echo "#!/usr/bin/env bash" > "${filename}"
+    chmod +x "${filename}"
+    vim "${filename}"
+  }
+
   filename="$1"
-  echo "#!/usr/bin/env bash" > "${filename}"
-  chmod +x "${filename}"
-  vim "${filename}"
+  if [[ -f "${filename}" ]]
+  then
+    echo "${filename} already exits. Do you want to overwrite it? Y/n"
+    read user_choice
+    if [[ "${user_choice}" == Y ]]
+    then
+      run
+    fi
+  else
+    run
+  fi
 }
 
 cd_up() {
@@ -75,8 +90,6 @@ alias mkdirtouch="mkdir_and_touch"
 alias vimx="create_and_edit_executable_file"
 
 alias rmr="rm -r"
-
-alias dush="du --summarize --human-readable"
 
 alias encoding="file -i"
 

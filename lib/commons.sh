@@ -26,3 +26,5 @@ alias copy="xclip -selection clipboard"
 alias shrc="reload_bash"
 
 alias weather="weather"
+
+alias ll="ls -alFh"

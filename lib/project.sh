@@ -3,11 +3,11 @@
 # LABELS 240 -----------------------------------------------------------------------------------------------------------------------------
 labels240_home_dir="~/dev/labels-240"
 
-alias labels240="cd ${labels240_home_dir}"
+alias l240="cd ${labels240_home_dir}"
 
-alias labels240:web="cd ${labels240_home_dir}/labels240-client"
+alias l240:web="cd ${labels240_home_dir}/labels240-client"
 
-alias labels240:srv="cd ${labels240_home_dir}/labels240"
+alias l240:srv="cd ${labels240_home_dir}/labels240"
 
 # BCTP -----------------------------------------------------------------------------------------------------------------------------------
 bctp_home_dir="~/dev/bctp"
