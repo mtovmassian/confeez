@@ -46,9 +46,9 @@ b64_encode_basic_auth() {
 
 alias odiacc="cd ${odiacc_home_dir}"
 
-alias odiacc:web="cd ${odiacc_home_dir}/odiaccweb"
+alias odiacc:web="cd ${odiacc_home_dir}/odiaccweb && npm run start"
 
-alias odiacc:srv="cd ${odiacc_home_dir}/odiaccsrv"
+alias odiacc:srv="cd ${odiacc_home_dir}/odiaccsrv && pipenv run python server.py"
 
 alias b64auth="b64_encode_basic_auth"
 

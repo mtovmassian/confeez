@@ -13,12 +13,22 @@ link_vimrc() {
   ln -s ${HOME}/confeez/.vimrc "${VIMRC_FILE}"
 }
 
+source_ps1() {
+  source_ps1_statement="source ${HOME}/confeez/ps1.sh"
+  statement_exist=$(cat "${HOME}/.bashrc" | grep "${source_ps1_statement}")
+  if [[ ${#statement_exist} -eq 0 ]]
+  then
+    printf "\n%s\n" "${source_ps1_statement}" >> ${HOME}/.bashrc
+  fi
+}
+
 install() {
   link_bash_aliases
   link_vimrc
+  source_ps1
 }
 
-echo "This script will overwrite you current .bash_aliases and .vimrc files."
+echo "This script will overwrite/update you current .bashrc, .bash_aliases and .vimrc files"
 echo "Do you want to continue? Y/n"
 
 read user_choice

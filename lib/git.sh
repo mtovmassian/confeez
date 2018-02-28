@@ -74,6 +74,8 @@ alias gitd="git diff"
 
 alias gitc="git_commit"
 
+alias gitca="print_command 'git commit --amend' && git commit --amend"
+
 alias gitp="git_push"
 
 alias gitpl="git_pull"
