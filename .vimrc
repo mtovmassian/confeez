@@ -19,4 +19,9 @@ set showcmd
 set cursorline
 
 inoremap jj <Esc>
+"Save file without root privilege."
+cmap w!! w !sudo tee > /dev/null %
+cmap n+ set nu
+cmap n- set nonu
+
 

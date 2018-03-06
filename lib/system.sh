@@ -26,6 +26,10 @@ alias mem="print_command 'free -ht' && free -ht"
 
 alias sctl="systemctl"
 
+alias start:mongo="sudo systemctl start mongod"
+
+alias start:rabbitmq="sudo systemctl start rabbitmq-server"
+
 alias dfh="df -h"
 
 alias dush="du -sh"

@@ -5,11 +5,6 @@ ssh_aws_bastion() {
   ssh -i ${AWS_HARDIS_KEYS_DIR}/HardisGroup_BA_Grenoble.pem ec2-user@ec2-34-249-156-119.eu-west-1.compute.amazonaws.com
 }
 
-ssh_neptune_labels240() {
-  print_command "ssh hardis@description.neptune.fr"
-  ssh hardis@description.neptune.fr
-}
-
 AWS_HARDIS_KEYS_DIR="${HOME}/.safe/aws/hardis"
 
 alias ssh:sd="ssh usercds@192.168.32.187"
