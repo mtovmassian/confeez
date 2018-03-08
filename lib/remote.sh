@@ -7,6 +7,8 @@ ssh_aws_bastion() {
 
 AWS_HARDIS_KEYS_DIR="${HOME}/.safe/aws/hardis"
 
+AWS_MARTIN_KEY="/home/martin/.safe/aws/martin/aws-martin-key.pem"
+
 alias ssh:sd="ssh usercds@192.168.32.187"
 
 alias ssh:se1="ssh usersmartexchange@192.168.38.154"
