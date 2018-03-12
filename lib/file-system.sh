@@ -63,12 +63,6 @@ pwd_up() {
   fi
 }
 
-export_python_path() {
-  local working_dir="$1"
-  print_command "export PYTHONPATH=$PYTHONPATH:${working_dir}"
-  export PYTHONPATH=$PYTHONPATH:${working_dir}
-}
-
 alias ..="cd_up"
 
 alias pwd..="pwd_up"
@@ -92,5 +86,3 @@ alias vimx="create_and_edit_executable_file"
 alias rmr="rm -r"
 
 alias encoding="file -i"
-
-alias pypath="export_python_path"

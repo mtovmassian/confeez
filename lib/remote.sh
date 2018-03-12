@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
 
-ssh_aws_bastion() {
-  print_command "ssh -i ${AWS_HARDIS_KEYS_DIR}/HardisGroup_BA_Grenoble.pem ec2-user@ec2-34-249-156-119.eu-west-1.compute.amazonaws.com"
-  ssh -i ${AWS_HARDIS_KEYS_DIR}/HardisGroup_BA_Grenoble.pem ec2-user@ec2-34-249-156-119.eu-west-1.compute.amazonaws.com
-}
+AWS_HARDIS_KEY="${HOME}/.safe/aws/hardis/HardisGroup_BA_Grenoble.pem"
 
-AWS_HARDIS_KEYS_DIR="${HOME}/.safe/aws/hardis"
-
-AWS_MARTIN_KEY="/home/martin/.safe/aws/martin/aws-martin-key.pem"
+AWS_MARTIN_KEY="${HOME}/.safe/aws/martin/aws-martin-key.pem"
 
 alias ssh:sd="ssh usercds@192.168.32.187"
 

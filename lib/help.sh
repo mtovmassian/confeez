@@ -9,7 +9,7 @@ help_linux_rights() {
   echo ""
 }
 
-alias h:rights="help_linux_rights"
+alias help:rights="help_linux_rights"
 
 # DATE -----------------------------------------------------------------------------------------------------------------------------------
 help_date() {
@@ -18,7 +18,7 @@ help_date() {
   echo ""
 }
 
-alias h:date="help_date"
+alias help:date="help_date"
 
 # TAR ------------------------------------------------------------------------------------------------------------------------------------
 help_tar() {
@@ -37,7 +37,7 @@ help_tar() {
   echo ""
 }
 
-alias h:tar="help_tar"
+alias help:tar="help_tar"
 
 # MYSQL ----------------------------------------------------------------------------------------------------------------------------------
 help_mysql() {
@@ -62,7 +62,7 @@ help_mysql() {
   echo ""
 }
 
-alias h:mysql="help_mysql"
+alias help:mysql="help_mysql"
 
 # MONGODB --------------------------------------------------------------------------------------------------------------------------------
 help_mongodb() {
@@ -78,7 +78,7 @@ help_mongodb() {
   echo ""
 }
 
-alias h:mongodb="help_mongodb"
+alias help:mongodb="help_mongodb"
 
 # SCP ------------------------------------------------------------------------------------------------------------------------------------
 help_scp() {
@@ -91,7 +91,7 @@ help_scp() {
   echo ""
 }
 
-alias h:scp="help_scp"
+alias help:scp="help_scp"
 
 # VIM ------------------------------------------------------------------------------------------------------------------------------------
 help_vim() {
@@ -114,6 +114,9 @@ help_vim() {
   echo "SEARCH AND REPLACE GLOBALLY"
   echo ":%s/foo/bar/g"
   echo ""
+  echo "TO LOWERCASE / TO UPPERCASE"
+  echo "gu / gU"
+  echo ""
   echo "TEXT AUTOCOMPLETION"
   echo "<Ctrl-p> / <Ctrl-n>"
   echo ""
@@ -122,7 +125,7 @@ help_vim() {
   echo ""
 }
 
-alias h:vim="help_vim"
+alias help:vim="help_vim"
 
 # IPTABLES -------------------------------------------------------------------------------------------------------------------------------
 help_iptables() {
@@ -139,7 +142,7 @@ help_iptables() {
   echo ""
 }
 
-alias h:iptables="help_iptables"
+alias help:iptables="help_iptables"
 
 # UFW ------------------------------------------------------------------------------------------------------------------------------------
 help_ufw() {
@@ -161,4 +164,4 @@ help_ufw() {
   echo ""
 }
 
-alias h:ufw="help_ufw"
+alias help:ufw="help_ufw"

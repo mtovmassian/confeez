@@ -34,11 +34,11 @@ alias dfh="df -h"
 
 alias dush="du -sh"
 
-alias fw:status="print_command 'sudo ufw status numbered' && sudo ufw status numbered"
+alias ufw:status="print_command 'sudo ufw status numbered' && sudo ufw status numbered"
 
-alias fw:open="update_firewall allow"
+alias ufw:open="update_firewall allow"
 
-alias fw:close="update_firewall deny"
+alias ufw:close="update_firewall deny"
 
 alias lock="gnome-screensaver-command --lock" 
 
