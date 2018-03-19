@@ -8,6 +8,12 @@ export_python_path() {
   export PYTHONPATH=$PYTHONPATH:${project_dir}
 }
 
+run_python() {
+  echo "${VIRTUALENV_DIR} $@"
+}
+
 alias py="eval ${VIRTUALENV_DIR}"
 
 alias py:path="export_python_path"
+
+alias prp="pipenv run python"

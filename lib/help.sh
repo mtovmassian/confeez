@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# LINUX RIGHTS ---------------------------------------------------------------------------------------------------------------------------
+# LINUX RIGHTS
 help_linux_rights() {
   echo ""
   echo "r(read):    4 100"
@@ -11,7 +11,7 @@ help_linux_rights() {
 
 alias help:rights="help_linux_rights"
 
-# DATE -----------------------------------------------------------------------------------------------------------------------------------
+# DATE
 help_date() {
   echo ""
   echo "date \"+%Y-%m-%d %H:%M:%S\""
@@ -20,7 +20,18 @@ help_date() {
 
 alias help:date="help_date"
 
-# TAR ------------------------------------------------------------------------------------------------------------------------------------
+# GIT
+help_git() {
+  echo ""
+  echo "DELETE LOCAL AND REMOTE BRANCH"
+  echo "~\$ git --delete <branch>"
+  echo "~\$ git push origin --delete <branch>"
+  echo ""
+}
+
+alias help:git="help_git"
+
+# TAR
 help_tar() {
   echo ""
   echo "c: create archive"
@@ -39,7 +50,7 @@ help_tar() {
 
 alias help:tar="help_tar"
 
-# MYSQL ----------------------------------------------------------------------------------------------------------------------------------
+# MYSQL
 help_mysql() {
   echo ""
   echo "CREATE DATABASE:"
@@ -60,11 +71,14 @@ help_mysql() {
   echo "LOAD DATA:"
   echo "mysql> load data local infile '<csv file>' into table <table> character set utf8 fields terminated by ',' enclosed by '\\\"' lines terminated by '\\n' ignore 1 lines;"
   echo ""
+  echo "EXECUTE QUERY FROM COMMAND LINE"
+  echo "mysql -u <username> -p <database> --password=<password> -vve \"<query>\""
+  echo ""
 }
 
 alias help:mysql="help_mysql"
 
-# MONGODB --------------------------------------------------------------------------------------------------------------------------------
+# MONGODB
 help_mongodb() {
   echo ""
   echo "DUMP DATABASE:"
@@ -80,7 +94,7 @@ help_mongodb() {
 
 alias help:mongodb="help_mongodb"
 
-# SCP ------------------------------------------------------------------------------------------------------------------------------------
+# SCP
 help_scp() {
   echo ""
   echo "FROM LOCAL TO REMOTE"
@@ -93,7 +107,7 @@ help_scp() {
 
 alias help:scp="help_scp"
 
-# VIM ------------------------------------------------------------------------------------------------------------------------------------
+# VIM
 help_vim() {
   echo ""
   echo "EXECUTE COMMAND AROUND TAG"
@@ -127,7 +141,7 @@ help_vim() {
 
 alias help:vim="help_vim"
 
-# IPTABLES -------------------------------------------------------------------------------------------------------------------------------
+# IPTABLES
 help_iptables() {
   echo ""
   echo "ACCEPT ONLY ACCESS FROM LOCALHOST"
@@ -144,7 +158,7 @@ help_iptables() {
 
 alias help:iptables="help_iptables"
 
-# UFW ------------------------------------------------------------------------------------------------------------------------------------
+# UFW
 help_ufw() {
   echo ""
   echo "DISPLAY RULES"

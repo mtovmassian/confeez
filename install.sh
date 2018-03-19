@@ -8,7 +8,12 @@ link_vimrc() {
   ln -s ${HOME}/confeez/.vimrc "${VIMRC_FILE}"
 }
 
-source_confeez() {
+init_confeez_file() {
+  confeez_dir_assignement=$(sed "s/\//\\\\\//g" <<< "CONFEEZ_DIR=\"${CONFEEZ_DIR}\"")
+  sed -i -e "s/CONFEEZ_DIR=.*/$confeez_dir_assignement/g" confeez.sh
+}
+
+source_confeez_file() {
   source_statement="source ${CONFEEZ_DIR}/confeez.sh"
   statement_exist=$(cat "${HOME}/.bashrc" | grep "${source_statement}")
   if [[ ${#statement_exist} -eq 0 ]]
@@ -18,7 +23,8 @@ source_confeez() {
 }
 
 install() {
-  source_confeez
+  init_confeez_file
+  source_confeez_file
   link_vimrc
 }
 

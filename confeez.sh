@@ -1,9 +1,10 @@
 #!/usr/bin/env bash 
 
-LIB_DIR="${HOME}/confeez/lib"
+CONFEEZ_DIR="/home/martin/confeez"
+alias confeez="cd ${CONFEEZ_DIR}"
 
 print_command() {
-  command="$1"
+  command="$@"
   local DEFAULT_COLOR=$(tput sgr0)
   local GREY_COLOR=$(tput setaf 245)
   echo $GREY_COLOR"${command}"$DEFAULT_COLOR
@@ -16,35 +17,35 @@ parse_git_branch() {
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[1;35m\]$(parse_git_branch)\[\033[00m\]\$ '
 
 # SYSTEM ----------------------------------------
-source "${LIB_DIR}"/system.sh
+source "${CONFEEZ_DIR}"/lib/system.sh
 
 # FILE SYSTEM -----------------------------------
-source "${LIB_DIR}"/file-system.sh
+source "${CONFEEZ_DIR}"/lib/file-system.sh
 
 # GREP ------------------------------------------
-source "${LIB_DIR}"/grep.sh
+source "${CONFEEZ_DIR}"/lib/grep.sh
 
 # HELP ------------------------------------------
-source "${LIB_DIR}"/help.sh
+source "${CONFEEZ_DIR}"/lib/help.sh
 
 # REMOTE ----------------------------------------
-source "${LIB_DIR}"/remote.sh
+source "${CONFEEZ_DIR}"/lib/remote.sh
 
 # COMMONS----------------------------------------
-source "${LIB_DIR}"/commons.sh
+source "${CONFEEZ_DIR}"/lib/commons.sh
 
 # GIT -------------------------------------------
-source "${LIB_DIR}"/git.sh
+source "${CONFEEZ_DIR}"/lib/git.sh
 
 # PYTHON ----------------------------------------
-source "${LIB_DIR}"/python.sh
+source "${CONFEEZ_DIR}"/lib/python.sh
 
 # DOCKER ----------------------------------------
-source "${LIB_DIR}"/docker.sh
+source "${CONFEEZ_DIR}"/lib/docker.sh
 
 # AWS -------------------------------------------
-source "${LIB_DIR}"/aws.sh
+source "${CONFEEZ_DIR}"/lib/aws.sh
 
 # PROJECT ---------------------------------------
-source "${LIB_DIR}"/project.sh
+source "${CONFEEZ_DIR}"/lib/project.sh
 
