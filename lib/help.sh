@@ -24,7 +24,7 @@ alias help:date="help_date"
 help_git() {
   echo ""
   echo "DELETE LOCAL AND REMOTE BRANCH"
-  echo "~\$ git --delete <branch>"
+  echo "~\$ git branch --delete <branch>"
   echo "~\$ git push origin --delete <branch>"
   echo ""
 }

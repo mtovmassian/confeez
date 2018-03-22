@@ -10,6 +10,8 @@ alias ssh:se1="ssh usersmartexchange@192.168.38.154"
 
 alias ssh:se2="ssh usersmartexchange@192.168.238.198"
 
+alias ssh:se3="ssh userds@192.168.141.101"
+
 alias ssh:labels240="ssh_neptune_labels240"
 
 alias ssh:awsbastion="ssh_aws_bastion"

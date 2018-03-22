@@ -8,6 +8,7 @@ clear_web_session() {
 
 }
 
+# firewall
 update_firewall() {
   access_rule="${1}"
   port="${2}"
@@ -15,14 +16,26 @@ update_firewall() {
   print_command "${ufw_command}"
   eval "${ufw_command}"
 }
+alias ufw:status="print_command 'sudo ufw status numbered' && sudo ufw status numbered"
 
+alias ufw:open="update_firewall allow"
+
+alias ufw:close="update_firewall deny"
+
+# memory
+alias mem="print_command 'free -ht' && free -ht"
+
+# disk usage
+alias df="df -h"
+
+alias dush="du -sh"
+
+# process
 alias proc="htop"
 
 alias gproc="gnome-system-monitor"
 
 alias arch="print_command 'lscpu' && lscpu"
-
-alias mem="print_command 'free -ht' && free -ht"
 
 alias sctl="systemctl"
 
@@ -30,16 +43,7 @@ alias start:mongo="sudo systemctl start mongod"
 
 alias start:rabbitmq="sudo systemctl start rabbitmq-server"
 
-alias dfh="df -h"
-
-alias dush="du -sh"
-
-alias ufw:status="print_command 'sudo ufw status numbered' && sudo ufw status numbered"
-
-alias ufw:open="update_firewall allow"
-
-alias ufw:close="update_firewall deny"
-
+# machine
 alias lock="gnome-screensaver-command --lock" 
 
 alias down="print_command 'sudo shutdown now' && sudo shutdown now"

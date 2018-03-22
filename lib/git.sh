@@ -26,8 +26,8 @@ git_commit() {
 
 git_pull() {
   local current_branch="$(get_current_branch)"
-  print_command "git pull origin ${current_branch}"
-  git pull origin "${current_branch}"
+  print_command "git pull --rebase origin ${current_branch}"
+  git pull --rebase origin "${current_branch}"
 }
 
 git_push() {
@@ -64,7 +64,7 @@ git_flow_finish_branch() {
 
 alias gits="print_command 'git status' && git status"
 
-alias gitl="print_command 'git log --graph' && git log --graph"
+alias gitl="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 
 alias gitck="git_checkout"
 
