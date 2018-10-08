@@ -12,6 +12,10 @@ alias ssh:se2="ssh usersmartexchange@192.168.238.198"
 
 alias ssh:se3="ssh userds@192.168.141.101"
 
-alias ssh:labels240="ssh_neptune_labels240"
+alias ssh:labels240="ssh hardis@description.neptune.fr"
 
-alias ssh:awsbastion="ssh_aws_bastion"
+alias ssh:interndata="ssh userds@10.208.38.188"
+
+alias ssh:asterix="ssh ubuntu@134.158.151.46"
+
+alias ssh:emr="ssh hadoop@35.180.85.255"

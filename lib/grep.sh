@@ -2,9 +2,9 @@
 
 alias higrep="history | grep"
 
-alias psgrep="ps -aux | grep"
+alias psgrep="ps -auwx | grep"
 
-alias lsgrep="ls -la | grep"
+alias lsgrep="ls -alFh | grep"
 
 alias aliasgrep="alias | grep"
 

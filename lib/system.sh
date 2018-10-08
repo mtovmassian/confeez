@@ -8,34 +8,20 @@ clear_web_session() {
 
 }
 
-# firewall
-update_firewall() {
-  access_rule="${1}"
-  port="${2}"
-  ufw_command="sudo ufw ${access_rule} proto tcp to any port ${port}"
-  print_command "${ufw_command}"
-  eval "${ufw_command}"
-}
-alias ufw:status="print_command 'sudo ufw status numbered' && sudo ufw status numbered"
-
-alias ufw:open="update_firewall allow"
-
-alias ufw:close="update_firewall deny"
-
 # memory
-alias mem="print_command 'free -ht' && free -ht"
+alias show:mem="print_command 'free -ht' && free -ht"
 
-# disk usage
-alias df="df -h"
+# disk
+alias show:diskf="df -h"
 
-alias dush="du -sh"
+alias show:disku="du -sh"
 
 # process
-alias proc="htop"
+alias show:proc="htop"
 
-alias gproc="gnome-system-monitor"
+alias show:proc:gui="gnome-system-monitor"
 
-alias arch="print_command 'lscpu' && lscpu"
+alias show:arch="lscpu"
 
 alias sctl="systemctl"
 
@@ -46,8 +32,10 @@ alias start:rabbitmq="sudo systemctl start rabbitmq-server"
 # machine
 alias lock="gnome-screensaver-command --lock" 
 
-alias down="print_command 'sudo shutdown now' && sudo shutdown now"
+alias down="sudo shutdown now"
 
-alias reboot="print_command 'sudo reboot' && sudo reboot"
+alias reboot="sudo reboot"
 
-alias update="print_command 'sudo apt-get update && sudo apt-get upgrade -y' && sudo apt-get update && sudo apt-get upgrade -y"
+alias update="sudo apt-get update && sudo apt-get upgrade -y"
+
+alias clean="sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove"

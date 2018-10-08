@@ -71,8 +71,8 @@ start_ms_sim_calc() {
 }
 
 start_api() {
-  print_command "java -jar ${SE_ROOT_DIR}SmartExchangeRESTAPI/target/smartExchangeRestApi.war"
-  java -jar ${SE_ROOT_DIR}SmartExchangeRESTAPI/target/smartExchangeRestApi.war
+  print_command "java -jar ${SE_ROOT_DIR}SmartExchangeRESTAPI/target/SmartExchangeRestApi.war"
+  java -jar ${SE_ROOT_DIR}SmartExchangeRESTAPI/target/SmartExchangeRestApi.war
 }
 
 alias se:file="start_ms_file_gen"
