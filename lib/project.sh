@@ -33,7 +33,7 @@ alias sie:web="cd ${sie_home_dir}/sie-web"
 
 alias sie:db="mysql -h localhost -u root -p sie_dev"
 
-alias sie:hardis="ssh usersie@192.168.238.204"
+alias sie:hardis="ssh usersie@vmsiedev"
 
 # ODIACC ---------------------------------------------------------------------------------------------------------------------------------
 odiacc_home_dir="~/dev/odiacc"

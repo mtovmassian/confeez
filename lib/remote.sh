@@ -27,3 +27,5 @@ alias ssh:interndata="ssh userds@10.208.38.188"
 alias ssh:asterix="ssh ubuntu@134.158.151.46"
 
 alias ssh:emr="ssh hadoop@35.180.85.255"
+
+alias ssh:lims="ssh lims@vmlimsdev"
