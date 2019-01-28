@@ -64,7 +64,7 @@ git_flow_finish_branch() {
 
 alias gits="print_command 'git status' && git status"
 
-alias gitl="git log --graph --decorate --pretty=oneline --all --abbrev-commit"
+alias gitl="git log --graph --pretty=format:'%h -%C(auto)%d%Creset %s %C(magenta)(<%an> %cr)%Creset' --all"
 
 alias gitck="git_checkout"
 
