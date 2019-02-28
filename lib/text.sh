@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 
-alias higrep="history | grep"
+alias hig="history | grep"
 
-alias psgrep="ps -auwx | grep"
+alias psg="ps -auwx | grep"
 
-alias lsgrep="ls -alFh | grep"
+alias lsg="ls -alFh | grep"
 
-alias aliasgrep="alias | grep"
+alias aliasg="alias | grep"
 
-alias netgrep="netstat -tulpn | grep"
+alias netg="netstat -tulpn | grep"
+
+alias pkjsong="cat package.json | grep"
 
 extract_column() {
   local col_index="$1"
@@ -21,3 +23,4 @@ extract_column() {
 }
 
 alias col="extract_column"
+
