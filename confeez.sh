@@ -1,6 +1,5 @@
 #!/usr/bin/env bash 
 
-CONFEEZ_DIR="/home/martin/confeez"
 alias confeez="cd ${CONFEEZ_DIR}"
 
 print_command() {

@@ -18,7 +18,7 @@ source_confeez_file() {
   statement_exists=$(grep "${source_statement}" < "${HOME}/.bashrc")
   if [[ ${#statement_exists} -eq 0 ]]
   then
-    printf "\\n%s\\n" "${source_statement}" >> "${HOME}/.bashrc"
+    printf "\\n%s\\n%s\\n" "export CONFEEZ_DIR=\"${CONFEEZ_DIR}\"" "${source_statement}" >> "${HOME}/.bashrc"
   fi
 }
 
