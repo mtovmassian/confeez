@@ -9,6 +9,8 @@ call vundle#end()
 filetype plugin indent on
 
 syntax enable
+set path+=**
+set wildmenu
 
 set expandtab
 set shiftwidth=2
