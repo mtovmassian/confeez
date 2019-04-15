@@ -179,3 +179,25 @@ help_ufw() {
 }
 
 alias help:ufw="help_ufw"
+
+
+# Terminal shortcuts
+help_term_short() {
+  printf "%s\n" "NAVIGATION"
+  printf "%s\n" "CTRL+A: go to begining of line"
+  printf "%s\n" "CTRL+E: go to end of line"
+  printf "%s\n" "ALT+B: one word Backward"
+  printf "%s\n" "ALT+F: one word Foreward"
+  printf "%s\n" "CTRL+B: one character Backward"
+  printf "%s\n" "CTRL+F: one character Foreward"
+  printf "%s\n" "EDITION"
+  printf "%s\n" "CTRL+D: delete character under cursor"
+  printf "%s\n" "ALT+D: delete all characters after cursor"
+  printf "%s\n" "CTRL+U: dlear line"
+  printf "%s\n" "HISTORY"
+  printf "%s\n" "CTRL+P: previous command line"
+  printf "%s\n" "CTRL+N: next command line"
+
+}
+
+alias help:termshort="help_term_short"

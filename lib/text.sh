@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+alias like="| grep"
+
 alias higrep="history | grep"
 
 alias psgrep="ps -auwx | grep"
