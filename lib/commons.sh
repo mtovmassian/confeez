@@ -28,3 +28,5 @@ alias shrc="reload_bash"
 alias weather="weather"
 
 alias ll="ls -alFh"
+
+alias map="xargs -n1"
