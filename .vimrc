@@ -33,7 +33,7 @@ cmap n- set nonu
 "Save as root
 cmap w!! w !sudo tee > /dev/null %
 "NERDTree
-map <C-n> :NERDTreeToggle<CR>
+nmap <F2> :NERDTreeToggle<CR>
 "Tagbar
 map <C-t> :TagbarToggle<CR>
 nnoremap <leader>. :CtrlPTag<cr>

@@ -23,6 +23,8 @@ alias colors="print_colors"
 
 alias copy="xclip -selection clipboard"
 
+alias paste="xclip -selection clipboard -o"
+
 alias shrc="reload_bash"
 
 alias weather="weather"
