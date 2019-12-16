@@ -92,3 +92,4 @@ alias gitfhot="git_flow_start_branch hotfix"
 
 alias gitffin="git_flow_finish_branch"
 
+alias gitlatestmsg="git log | head -n 5 | sed -n '5,5p' | sed -e 's/    //g'"

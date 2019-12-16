@@ -32,3 +32,5 @@ alias weather="weather"
 alias ll="ls -alFh"
 
 alias map="xargs -n1"
+
+alias ipy="ipython"

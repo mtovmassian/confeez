@@ -63,6 +63,12 @@ pwd_up() {
   fi
 }
 
+copy_files_with_space_proof() {
+    output_dir="$1"
+    find . -type f -name '*.*' -print0 | while IFS= read -r -d '' file; do mv "$file" "${output_dir}${file}"; done
+}
+
+
 alias ..="cd_up"
 
 alias pwd..="pwd_up"
