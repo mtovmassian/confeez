@@ -6,10 +6,9 @@ mkdir_and_cd() {
   mkdir "${dirname}" && cd "${dirname}"
 }
 
-mkdir_and_touch() {
+mkdir_and_touch_file() {
   path="$1"
-  mkdir -p "$(dirname "${path}")"
-  touch "${path}"
+  mkdir -p "$(dirname "${path}")" && touch "${path}"
 }
 
 create_and_edit_executable_file() {
@@ -77,6 +76,12 @@ alias home="cd ${HOME}"
 
 alias dev="cd ${HOME}/dev"
 
+alias proj="cd ${HOME}/dev/projects"
+
+alias dd="cd ${HOME}/dev/dry-dock"
+
+alias tl="cd ${HOME}/dev/tech-lead"
+
 alias data="cd ${HOME}/data"
 
 alias dl="cd ${HOME}/downloads"
@@ -85,7 +90,7 @@ alias opt="cd /opt/"
 
 alias mkdircd="mkdir_and_cd"
 
-alias mkdirtouch="mkdir_and_touch"
+alias mkdirf="mkdir_and_touch_file"
 
 alias vimx="create_and_edit_executable_file"
 
