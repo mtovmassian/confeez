@@ -78,7 +78,7 @@ alias dev="cd ${HOME}/dev"
 
 alias proj="cd ${HOME}/dev/projects"
 
-alias dd="cd ${HOME}/dev/dry-dock"
+alias dd="cd ${HOME}/dry-dock"
 
 alias tl="cd ${HOME}/dev/tech-lead"
 

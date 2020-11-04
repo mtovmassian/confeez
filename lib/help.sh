@@ -137,6 +137,12 @@ help_vim() {
   echo "PATH AUTOCOMPLETION"
   echo "<Ctrl-x><Ctrl-f>"
   echo ""
+  echo "COMMENT BLOCK"
+  echo "<Ctrl-v>j<Shift-i>#Esc"
+  echo ""
+  echo "UNCOMMENT BLOCK"
+  echo "<Ctrl-v>jx"
+  echo ""
 }
 
 alias help:vim="help_vim"

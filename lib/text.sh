@@ -26,3 +26,11 @@ extract_column() {
 
 alias col="extract_column"
 
+alias henry="grep -Hnry"
+
+alias head20="head -n 20"
+
+alias head30="head -n 30"
+
+alias head50="head -n 50"
+

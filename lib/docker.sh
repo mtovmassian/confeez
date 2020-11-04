@@ -1,21 +1,28 @@
 #!/usr/bin/env bash
 
-alias dk="docker"
-
-alias dkc="docker container"
-alias dkcl="docker container ls --all"
-alias dkclq="docker container ls --all --quiet"
-alias dkcs="docker container stop"
-alias dkcr="docker container rm"
-
-dkc_stop_remove() {
-  dk stop $(dkc ls -f 'status=running' -q) && dk rm $(dkc ls -qa)
+docker_containers_stop_remove() {
+    docker stop $(docker container ls -f 'status=running' -q) | xargs docker container rm 
 }
 
-alias dki="docker image"
-alias dkil="docker image ls --all"
-alias dkilq="docker image ls --all -q"
+env_vars_to_docker_args() {
+    sed -e "s/\(.*\)=.*/-e \1=\"\${\1}\" \\\/g" $1
+}
 
+alias dk="docker"
+alias dkc="docker container"
+alias dkcls="docker container ls --all"
+alias dkclsq="docker container ls --all --quiet"
+alias dkcstop="docker container stop"
+alias dkcrm="docker container rm"
+alias dki="docker image"
+alias dkils="docker image ls --all"
+alias dkilsq="docker image ls --all -q"
 alias dksp="docker system prune --all --volumes"
 
 alias kb="kubectl"
+
+alias dkcompon="docker-compose -f docker-compose.yml up -d"
+alias dkcompoff="docker-compose stop && yes | docker-compose rm"
+
+alias dkenvargs="env_vars_to_docker_args"
+alias dkxargs="xargs docker"
