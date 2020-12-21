@@ -13,8 +13,16 @@ mkdir_and_touch_file() {
 
 create_and_edit_executable_file() {
   
+  write_content() {
+    cat << EOF | sed 's/^ *//' > "${filename}"
+    #!/usr/bin/env bash
+
+    set -euo pipefail
+EOF
+  }
+
   run() {
-    echo "#!/usr/bin/env bash" > "${filename}"
+    write_content
     chmod +x "${filename}"
     vim "${filename}"
   }
