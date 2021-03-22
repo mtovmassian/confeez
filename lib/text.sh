@@ -24,6 +24,11 @@ extract_column() {
   awk -F ''"${separator}"'' '{print $'${col_index}'}'
 }
 
+python_urlencode() {
+    url="$@"
+    python -c 'import sys; from urllib.parse import quote; print(quote(" ".join(sys.argv[1:])))' "$url"
+}
+
 alias col="extract_column"
 
 alias henry="grep -Hnry"

@@ -75,6 +75,20 @@ copy_files_with_space_proof() {
     find . -type f -name '*.*' -print0 | while IFS= read -r -d '' file; do mv "$file" "${output_dir}${file}"; done
 }
 
+safe_remove() {
+    file_absolute_path="$1"
+    safe_dir="/tmp"
+    file_name=$(basename "$file_absolute_path")
+    mv "$file_absolute_path" "${safe_dir}/${file_name}"
+}
+
+safe_remove_all() {
+    file_paths="$*"
+    for file_path in $file_paths
+    do
+        safe_remove "$(readlink -f "$file_path")"
+    done
+}
 
 alias ..="cd_up"
 
@@ -84,13 +98,7 @@ alias home="cd ${HOME}"
 
 alias dev="cd ${HOME}/dev"
 
-alias proj="cd ${HOME}/dev/projects"
-
 alias dd="cd ${HOME}/dry-dock"
-
-alias tl="cd ${HOME}/dev/tech-lead"
-
-alias data="cd ${HOME}/data"
 
 alias dl="cd ${HOME}/downloads"
 
@@ -102,6 +110,6 @@ alias mkdirf="mkdir_and_touch_file"
 
 alias vimx="create_and_edit_executable_file"
 
-alias rmr="rm -r"
-
 alias encoding="file -i"
+
+alias rm!="safe_remove_all"
