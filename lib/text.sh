@@ -29,6 +29,12 @@ python_urlencode() {
     python -c 'import sys; from urllib.parse import quote; print(quote(" ".join(sys.argv[1:])))' "$url"
 }
 
+last_word() {
+  read text
+  text_length="$(echo ${text} | wc -w)"
+  echo "$text" | cut -d' ' -f"$text_length"
+}
+
 alias col="extract_column"
 
 alias henry="grep -Hnry"
@@ -38,4 +44,3 @@ alias head20="head -n 20"
 alias head30="head -n 30"
 
 alias head50="head -n 50"
-
