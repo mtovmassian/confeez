@@ -8,6 +8,19 @@ env_vars_to_docker_args() {
     sed -e "s/\(.*\)=.*/-e \1=\"\${\1}\" \\\/g" $1
 }
 
+docker_ssh_container() {
+    container_id="$1"
+
+    if [[ -z $2 ]]
+    then
+        shell="/bin/bash"
+    else
+        shell="$2"
+    fi
+
+    docker exec -it "$container_id" "$shell"
+}
+
 alias dk="docker"
 alias dkc="docker container"
 alias dkcls="docker container ls --all"
@@ -26,3 +39,5 @@ alias dkcompoff="docker-compose stop && yes | docker-compose rm"
 
 alias dkenvargs="env_vars_to_docker_args"
 alias dkxargs="xargs docker"
+
+alias dkssh="docker_ssh_container"
